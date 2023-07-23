@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+ string s;
+ cin>>s;
+ stack<char>dq;
+ int ans=0;
+ for(int i=0;i<s.size();i++){
+    if(s[i]=='('){
+        dq.push(s[i]);
+    }
+    else{
+        if(s[i]==')'){
+            if(!dq.empty()){
+                dq.pop();
+                ans=ans+2;
+            }
+        }
+    }
+ }
+ cout<<ans<<endl;
+return 0;
+}
